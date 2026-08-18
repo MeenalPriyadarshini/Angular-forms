@@ -1,0 +1,44 @@
+<aside class="sidebar-nav"
+       [style.width]="isCollapsed ? '60px' : '250px'"
+       (mouseenter)="onSidebarEnter()"
+       (mouseleave)="onSidebarLeave()">
+  <div class="px-4 py-6">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-sm font-bold">
+        DT
+      </div>
+      <span *ngIf="!isCollapsed" class="text-lg font-semibold text-blue-600">DTMS</span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="space-y-2">
+      <a *ngFor="let item of menuItems; let i = index"
+         href="javascript:void(0)"
+         class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+         [class.bg-blue-50]="isActive(i)"
+         [class.text-blue-600]="isActive(i)"
+         (mouseenter)="onTopEnter(i)"
+         (mouseleave)="onTopLeave()"
+         (click)="navigateTo(item.route || '/')">
+        <span class="w-5 h-5 flex-shrink-0">
+          <!-- Icon placeholder -->
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
+          </svg>
+        </span>
+        <span *ngIf="!isCollapsed" class="text-sm">{{item.name}}</span>
+      </a>
+    </nav>
+
+    <!-- Logout at bottom -->
+    <div class="mt-auto pt-4 pb-4 border-t border-gray-200">
+      <button class="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 013-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+        </svg>
+        <span *ngIf="!isCollapsed" class="text-sm">Logout</span>
+      </button>
+    </div>
+  </div>
+</aside>

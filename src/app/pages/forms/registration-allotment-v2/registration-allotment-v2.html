@@ -1,0 +1,391 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <!-- =========================================================
+       1. CONSIGNMENT DETAILS
+       ========================================================= -->
+  <section class="section">
+    <h2>1. CONSIGNMENT DETAILS</h2>
+    <div class="form-grid two-column">
+      <!-- Station From -->
+      <div class="field">
+        <label>Station From</label>
+        <input type="text" formControlName="stationFrom">
+      </div>
+      <!-- Consignment ID -->
+      <div class="field">
+        <label>Consignment ID</label>
+        <input type="text" formControlName="consignmentId">
+      </div>
+      <!-- Date -->
+      <div class="field">
+        <label>Date</label>
+        <input type="text" formControlName="date">
+      </div>
+      <!-- Service Mode -->
+      <div class="field">
+        <label>Service Mode</label>
+        <input type="text" formControlName="serviceMode">
+      </div>
+      <!-- Request Date -->
+      <div class="field">
+        <label>Request Date</label>
+        <input type="text" formControlName="requestDate">
+      </div>
+      <!-- Delivery Date -->
+      <div class="field">
+        <label>Delivery Date</label>
+        <input type="text" formControlName="deliveryDate">
+      </div>
+      <!-- WC/NSEE -->
+      <div class="field full-width">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="wCnsee">
+          <span>WC/NSEE</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       2. REGISTRATION DETAILS
+       ========================================================= -->
+  <section class="section">
+    <h2>2. REGISTRATION DETAILS</h2>
+    <!-- Registration Information -->
+    <div class="sub-section">
+      <h3>Registration Information</h3>
+      <div class="form-grid two-column">
+        <div class="field">
+          <label>Rebooking</label>
+          <input type="checkbox" formControlName="rebooking">
+        </div>
+        <div class="field">
+          <label>Rake</label>
+          <input type="checkbox" formControlName="rake">
+        </div>
+        <div class="field">
+          <label>Owned</label>
+          <input type="checkbox" formControlName="owned">
+        </div>
+        <div class="field">
+          <label>Station To</label>
+          <input type="text" formControlName="stationTo">
+        </div>
+        <div class="field">
+          <label>Commodity Code</label>
+          <input type="text" formControlName="commodityCode">
+        </div>
+        <div class="field">
+          <label>Commodity Description</label>
+          <input type="text" formControlName="commodityDescription">
+        </div>
+      </div>
+    </div>
+
+    <!-- Consignor -->
+    <div class="party-grid">
+      <div class="party-card">
+        <h4>Consignor</h4>
+        <div class="form-grid two-column">
+          <div class="field">
+            <label>Code</label>
+            <input type="text" formControlName="consignor.code">
+          </div>
+          <div class="field">
+            <label>ID</label>
+            <input type="text" formControlName="consignor.id">
+          </div>
+          <div class="field">
+            <label>Name</label>
+            <input type="text" formControlName="consignor.name">
+          </div>
+          <div class="field full-width">
+            <label>Address</label>
+            <input type="text" formControlName="consignor.address">
+          </div>
+          <div class="field">
+            <label>City / State</label>
+            <input type="text" formControlName="consignor.cityState">
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="text" formControlName="consignor.phone">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="text" formControlName="consignor.email">
+          </div>
+          <div class="field">
+            <label>GSTIN</label>
+            <input type="text" formControlName="consignor.gstin">
+          </div>
+          <div class="field">
+            <label>Distance</label>
+            <input type="text" formControlName="consignor.distance">
+          </div>
+          <div class="field full-width">
+            <label>Pickup Point</label>
+            <input type="text" formControlName="consignor.pickupPoint">
+          </div>
+        </div>
+      </div>
+
+      <!-- Consignee -->
+      <div class="party-card">
+        <h4>Consignee</h4>
+        <div class="form-grid two-column">
+          <div class="field">
+            <label>Code</label>
+            <input type="text" formControlName="consignee.code">
+          </div>
+          <div class="field">
+            <label>ID</label>
+            <input type="text" formControlName="consignee.id">
+          </div>
+          <div class="field">
+            <label>Name</label>
+            <input type="text" formControlName="consignee.name">
+          </div>
+          <div class="field full-width">
+            <label>Address</label>
+            <input type="text" formControlName="consignee.address">
+          </div>
+          <div class="field">
+            <label>City / State</label>
+            <input type="text" formControlName="consignee.cityState">
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="text" formControlName="consignee.phone">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="text" formControlName="consignee.email">
+          </div>
+          <div class="field">
+            <label>GSTIN</label>
+            <input type="text" formControlName="consignee.gstin">
+          </div>
+          <div class="field">
+            <label>Distance</label>
+            <input type="text" formControlName="consignee.distance">
+          </div>
+          <div class="field full-width">
+            <label>Pickup Point</label>
+            <input type="text" formControlName="consignee.pickupPoint">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. CONTAINER DETAILS
+       ========================================================= -->
+  <section class="section">
+    <h2>3. CONTAINER DETAILS</h2>
+    <div class="table-section-layout">
+      <!-- Container Input Area -->
+      <div class="input-panel">
+        <div class="field">
+          <label>Container Number</label>
+          <input type="text" formControlName="containerNumber">
+        </div>
+        <div class="field">
+          <label>Container Size</label>
+          <input type="text" formControlName="containerSize">
+        </div>
+        <div class="field">
+          <label>Container Type</label>
+          <input type="text" formControlName="containerType">
+        </div>
+        <div class="field">
+          <label>Seal Number</label>
+          <input type="text" formControlName="sealNumber">
+        </div>
+        <div class="field">
+          <label>Loaded Weight</label>
+          <input type="text" formControlName="loadedWeight">
+        </div>
+        <div class="field">
+          <label>Tare Weight</label>
+          <input type="text" formControlName="tareWeight">
+        </div>
+        <button type="button" class="add-button" (click)="addContainer()">
+          Add Container
+        </button>
+      </div>
+
+      <!-- Container Table Area -->
+      <div class="data-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Container Number</th>
+              <th>Size</th>
+              <th>Type</th>
+              <th>Seal Number</th>
+              <th>Loaded Weight</th>
+              <th>Tare Weight</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of containerRows; let i = index">
+              <td>{{ row.containerNumber }}</td>
+              <td>{{ row.containerSize }}</td>
+              <td>{{ row.containerType }}</td>
+              <td>{{ row.sealNumber }}</td>
+              <td>{{ row.loadedWeight }}</td>
+              <td>{{ row.tareWeight }}</td>
+              <td>
+                <button type="button" class="delete-button" (click)="removeContainer(i)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+
+            <!-- Empty table -->
+            <tr *ngIf="containerRows.length === 0">
+              <td colspan="7" class="empty-table">
+                No container data entered
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. PAYMENT & REGISTRATION AMOUNT
+       ========================================================= -->
+  <section class="section">
+    <h2>4. PAYMENT & REGISTRATION AMOUNT</h2>
+    <div class="payment-layout">
+      <!-- Left Side -->
+      <div>
+        <!-- Payment Type -->
+        <div class="field">
+          <label>Payment Type</label>
+          <select formControlName="paymentType">
+            <option value="">Select Payment Type</option>
+            <option value="P">P | Paid</option>
+            <option value="T">T | To Pay</option>
+          </select>
+        </div>
+
+        <!-- Paid By -->
+        <div class="radio-section">
+          <span class="group-label">Paid By</span>
+          <label class="radio-label">
+            <input type="radio" formControlName="paidBy" value="Consignor">
+            <span>Consignor</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" formControlName="paidBy" value="Consignee">
+            <span>Consignee</span>
+          </label>
+        </div>
+
+        <!-- Payment / Registration Option -->
+        <div class="radio-section">
+          <span class="group-label">Payment / Registration Option</span>
+          <label class="radio-label">
+            <input type="radio" formControlName="paymentMode" value="PDA">
+            <span>PDA</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" formControlName="paymentMode" value="CA">
+            <span>CA</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" formControlName="paymentMode" value="Money Receipt">
+            <span>Money Receipt</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" formControlName="paymentMode" value="Deferred">
+            <span>Deferred</span>
+          </label>
+        </div>
+
+        <!-- Generate Money Receipt -->
+        <div class="checkbox-row">
+          <label class="checkbox-label">
+            <input type="checkbox" formControlName="generateMoneyReceipt">
+            <span>Generate Money Receipt</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Right Side: Amounts -->
+      <div>
+        <!-- Advance Amount -->
+        <div class="field">
+          <label>Advance Amount</label>
+          <input type="text" formControlName="advanceAmount">
+        </div>
+
+        <!-- Total Amount -->
+        <div class="field">
+          <label>Total Amount</label>
+          <input type="text" formControlName="totalAmount">
+        </div>
+
+        <!-- Balance Amount -->
+        <div class="field">
+          <label>Balance Amount</label>
+          <input type="text" formControlName="balanceAmount">
+        </div>
+
+        <!-- Registration Amount -->
+        <div class="field">
+          <label>Registration Amount</label>
+          <input type="text" formControlName="registrationAmount">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. ALLOTMENT DETAILS
+       ========================================================= -->
+  <section class="section">
+    <h2>5. ALLOTMENT DETAILS</h2>
+    <div class="allotment-details">
+      <!-- Allotment Input Area -->
+      <div class="field">
+        <label>Allotted Wagon No.</label>
+        <input type="text" formControlName="allottedWagonNo">
+      </div>
+      <div class="field">
+        <label>Allotted Coach No.</label>
+        <input type="text" formControlName="allottedCoachNo">
+      </div>
+      <div class="field">
+        <label>Allotted Slot No.</label>
+        <input type="text" formControlName="allottedSlotNo">
+      </div>
+      <div class="field">
+        <label>Allotted Berth No.</label>
+        <input type="text" formControlName="allottedBerthNo">
+      </div>
+      <div class="field">
+        <label>Remarks</label>
+        <input type="text" formControlName="remarks">
+      </div>
+    </div>
+  </section>
+</form>
+
+<!-- Form Actions -->
+<div class="form-actions">
+  <button type="button" class="cancel-button" (click)="form.reset()">
+    Cancel
+  </button>
+  <button type="button" class="save-button" (click)="submitForm()">
+    Save
+  </button>
+  <button type="button" class="save-next-button" (click)="submitForm()">
+    Save & Next
+  </button>
+</div>

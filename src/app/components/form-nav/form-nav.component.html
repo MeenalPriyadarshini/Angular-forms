@@ -1,0 +1,35 @@
+<nav class="form-nav">
+
+  <div
+    class="nav-item"
+    *ngFor="let item of navItems; let i = index"
+    (mouseenter)="onItemEnter(i)"
+    (mouseleave)="onItemLeave()"
+  >
+
+    <!-- Main menu item -->
+    <span class="nav-label">
+      {{ item.label }}
+    </span>
+
+
+    <!-- Dropdown -->
+    <div
+      *ngIf="hasChildren(item) && hoveredIndex === i"
+      class="dropdown-menu"
+      (mouseenter)="onItemEnter(i)"
+      (mouseleave)="onItemLeave()"
+    >
+
+      <div
+        class="dropdown-item"
+        *ngFor="let child of item.children"
+      >
+        {{ child }}
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>

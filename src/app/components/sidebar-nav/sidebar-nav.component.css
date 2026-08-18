@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  background-color: white;
+  border-right: 1px solid var(--dtms-border);
+  transition: width 0.2s ease-in-out;
+}
+
+/* Optional: hover effect on items is already in HTML */

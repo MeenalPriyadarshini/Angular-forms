@@ -1,0 +1,35 @@
+<div *ngIf="isHomeView">
+  <!-- Home Page Layout: Horizontal Navbar at top -->
+  <app-navbar></app-navbar>
+  <main class="container mx-auto px-4 py-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<div *ngIf="!isHomeView">
+  <!-- Form Page Layout: Left Sidebar Navbar + Main Content -->
+  <div class="flex min-h-screen">
+    <app-sidebar-nav></app-sidebar-nav>
+    <div class="flex-1 flex flex-col">
+      <!-- Form Title and Form-Specific Navbar -->
+      <div class="border-b border-gray-200">
+        <!-- Form Title -->
+        <div class="px-4 py-3">
+          <!-- This will be replaced by the actual form title in each form component -->
+          <div *ngIf="currentUrl.includes('registration-allotment')" class="text-xl font-bold text-gray-800">
+            REGISTRATION / ALLOTMENT
+          </div>
+          <!-- Add more form titles here as needed -->
+        </div>
+
+        <!-- Form-Specific Navbar -->
+        <app-form-nav [navItems]="formNavItems"></app-form-nav>
+      </div>
+
+      <!-- Main Form Content -->
+      <main class="flex-1 container mx-auto px-4 py-8 overflow-y-auto">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+</div>

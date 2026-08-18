@@ -1,0 +1,32 @@
+<nav class="navbar bg-white border-b border-gray-200">
+  <!-- Main Menu (horizontal) -->
+  <div class="container border-t border-gray-200 px-4">
+    <ul class="flex items-center space-x-4 px-4 py-2">
+      <li *ngFor="let item of menuItems; let i = index"
+        class="relative"
+        (mouseenter)="onTopEnter(i)"
+        (mouseleave)="onTopLeave()">
+        <a href="javascript:void(0)"
+           class="flex items-center gap-1 px-2 py-1 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded"
+           [class.bg-blue-50]="isTopHovered(i)"
+           [class.text-blue-600]="isTopHovered(i)">
+          {{item.name}}
+        </a>
+        <!-- Only show submenu for Outward (index 1) -->
+        <div *ngIf="i === 1 && isTopHovered(i)"
+             class="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50 hidden block">
+          <ul class="py-1">
+            <li *ngFor="let sub of item.subItems; let j = index"
+                class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-100"
+                (mouseenter)="onSubEnter(i, j)"
+                (mouseleave)="onSubLeave()"
+                [class.hovered]="isSubHovered(i, j)"
+                (click)="navigateTo(getSubItemRoute(j))">
+              <a href="javascript:void(0)">{{sub}}</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

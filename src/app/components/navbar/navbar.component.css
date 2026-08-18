@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+/* Fix navbar styling to remove bullets, underlines, etc. */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Make navbar more compact */
+.navbar {
+  font-size: 0.875rem; /* Reduce base font size */
+}
+
+/* Compact header section */
+.navbar .flex.items-center.justify-between {
+  padding: 0.5rem 1rem; /* Reduce vertical padding */
+}
+
+/* Make logo smaller */
+.navbar .w-8.h-8 {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.navbar .text-xl {
+  font-size: 1rem !important; /* Reduce title size */
+}
+
+/* Make search more compact */
+.navbar .w-64 {
+  width: 8rem !important; /* Reduce search width */
+}
+
+.navbar input[type="text"] {
+  font-size: 0.75rem !important;
+  padding: 0.25rem 0.5rem !important;
+  height: 1.75rem !important;
+}
+
+/* Make icons smaller */
+.navbar svg.w-5.h-5 {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/* Reduce spacing in main menu */
+.navbar .space-x-4 {
+  gap: 0.5rem !important; /* Reduce gap between menu items */
+}
+
+/* Compact menu item padding */
+.navbar .px-2.py-1 {
+  padding: 0.25rem 0.5rem !important;
+}
+
+/* Reduce overall navbar height */
+.navbar .border-t {
+  padding-top: 0.5rem !important;
+}
+.navbar .border-b {
+  padding-bottom: 0.5rem !important;
+}

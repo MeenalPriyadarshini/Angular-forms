@@ -1,0 +1,1124 @@
+<form [formGroup]="form" class="registration-allotment-form">
+
+  <!-- ====================================================== -->
+  <!-- PAGE HEADER -->
+  <!-- ====================================================== -->
+
+  <header class="page-header">
+    <h1>Registration / Allotment</h1>
+  </header>
+
+
+  <!-- ====================================================== -->
+  <!-- FORM-SPECIFIC NAVIGATION -->
+  <!-- ====================================================== -->
+
+  <app-form-nav></app-form-nav>
+
+
+  <!-- ====================================================== -->
+  <!-- 1. CONSIGNMENT DETAILS -->
+  <!-- ====================================================== -->
+
+  <section formGroupName="consignment" class="section">
+
+    <h2>1. CONSIGNMENT DETAILS</h2>
+
+    <div class="form-grid two-column">
+
+      <!-- Station From -->
+      <div class="field">
+        <label>Station From</label>
+        <input
+          type="text"
+          formControlName="stationFrom">
+      </div>
+
+      <!-- Consignment ID -->
+      <div class="field">
+        <label>Consignment ID</label>
+        <input
+          type="text"
+          formControlName="consignmentId">
+      </div>
+
+      <!-- Date -->
+      <div class="field">
+        <label>Date</label>
+        <input
+          type="date"
+          formControlName="date">
+      </div>
+
+      <!-- Service Mode -->
+      <div class="field">
+        <label>Service Mode</label>
+
+        <select formControlName="serviceMode">
+
+          <option value="">Select Service Mode</option>
+
+          <option value="CC">CC</option>
+          <option value="CD">CD</option>
+          <option value="CT">CT</option>
+          <option value="CW">CW</option>
+
+          <option value="DC">DC</option>
+          <option value="DD">DD</option>
+          <option value="DT">DT</option>
+          <option value="DW">DW</option>
+
+          <option value="TC">TC</option>
+          <option value="TD">TD</option>
+          <option value="TT">TT</option>
+          <option value="TW">TW</option>
+
+          <option value="WC">WC</option>
+          <option value="WD">WD</option>
+          <option value="WT">WT</option>
+          <option value="WW">WW</option>
+
+        </select>
+      </div>
+
+      <!-- Request Date -->
+      <div class="field">
+        <label>Request Date</label>
+        <input
+          type="date"
+          formControlName="requestDate">
+      </div>
+
+      <!-- Delivery Date -->
+      <div class="field">
+        <label>Delivery Date</label>
+        <input
+          type="date"
+          formControlName="deliveryDate">
+      </div>
+
+    </div>
+
+
+    <!-- W CNSEE -->
+
+    <div class="checkbox-row">
+
+      <label class="checkbox-label">
+
+        <input
+          type="checkbox"
+          formControlName="wCnsee">
+
+        <span>W CNSEE</span>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- 2. REGISTRATION DETAILS -->
+  <!-- ====================================================== -->
+
+  <section formGroupName="registration" class="section">
+
+    <h2>2. REGISTRATION DETAILS</h2>
+
+
+    <!-- ==================================================== -->
+    <!-- REGISTRATION INFORMATION -->
+    <!-- ==================================================== -->
+
+    <div class="sub-section">
+
+      <h3>Registration Information</h3>
+
+      <div class="checkbox-row">
+
+        <!-- Rebooking -->
+        <label class="checkbox-label">
+
+          <input
+            type="checkbox"
+            formControlName="rebooking">
+
+          <span>Rebooking</span>
+
+        </label>
+
+
+        <!-- Rake -->
+        <label class="checkbox-label">
+
+          <input
+            type="checkbox"
+            formControlName="rake">
+
+          <span>Rake</span>
+
+        </label>
+
+
+        <!-- Owned -->
+        <label class="checkbox-label">
+
+          <input
+            type="checkbox"
+            formControlName="owned">
+
+          <span>Owned</span>
+
+        </label>
+
+      </div>
+
+
+      <div class="form-grid two-column">
+
+        <!-- Station To -->
+        <div class="field">
+
+          <label>Station To</label>
+
+          <input
+            type="text"
+            formControlName="stationTo">
+
+        </div>
+
+
+        <!-- Commodity Code -->
+        <div class="field">
+
+          <label>Commodity Code</label>
+
+          <input
+            type="text"
+            formControlName="commodityCode">
+
+        </div>
+
+
+        <!-- Commodity Description -->
+        <div class="field full-width">
+
+          <label>Commodity Description</label>
+
+          <input
+            type="text"
+            formControlName="commodityDescription">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================== -->
+    <!-- CONSIGNOR / CONSIGNEE -->
+    <!-- ==================================================== -->
+
+    <div class="sub-section">
+
+      <h3>Consignor / Consignee</h3>
+
+
+      <div class="party-grid">
+
+
+        <!-- ================================================= -->
+        <!-- CONSIGNOR -->
+        <!-- ================================================= -->
+
+        <div
+          formGroupName="consignor"
+          class="party-card">
+
+          <h4>Consignor</h4>
+
+          <div class="form-grid two-column">
+
+            <!-- Code -->
+            <div class="field">
+
+              <label>Code</label>
+
+              <input
+                type="text"
+                formControlName="code">
+
+            </div>
+
+
+            <!-- ID -->
+            <div class="field">
+
+              <label>ID</label>
+
+              <input
+                type="text"
+                formControlName="id">
+
+            </div>
+
+
+            <!-- Name -->
+            <div class="field full-width">
+
+              <label>Name</label>
+
+              <input
+                type="text"
+                formControlName="name">
+
+            </div>
+
+
+            <!-- Address -->
+            <div class="field full-width">
+
+              <label>Address</label>
+
+              <input
+                type="text"
+                formControlName="address">
+
+            </div>
+
+
+            <!-- City / State -->
+            <div class="field">
+
+              <label>City / State</label>
+
+              <input
+                type="text"
+                formControlName="cityState">
+
+            </div>
+
+
+            <!-- Phone -->
+            <div class="field">
+
+              <label>Phone</label>
+
+              <input
+                type="text"
+                formControlName="phone">
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="field full-width">
+
+              <label>Email</label>
+
+              <input
+                type="text"
+                formControlName="email">
+
+            </div>
+
+
+            <!-- GSTIN -->
+            <div class="field">
+
+              <label>GSTIN</label>
+
+              <input
+                type="text"
+                formControlName="gstin">
+
+            </div>
+
+
+            <!-- Distance -->
+            <div class="field">
+
+              <label>Distance</label>
+
+              <input
+                type="text"
+                formControlName="distance">
+
+            </div>
+
+
+            <!-- Pickup Point -->
+            <div class="field full-width">
+
+              <label>Pickup Point</label>
+
+              <input
+                type="text"
+                formControlName="pickupPoint">
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- CONSIGNEE -->
+        <!-- ================================================= -->
+
+        <div
+          formGroupName="consignee"
+          class="party-card">
+
+          <h4>Consignee</h4>
+
+          <div class="form-grid two-column">
+
+            <!-- Code -->
+            <div class="field">
+
+              <label>Code</label>
+
+              <input
+                type="text"
+                formControlName="code">
+
+            </div>
+
+
+            <!-- ID -->
+            <div class="field">
+
+              <label>ID</label>
+
+              <input
+                type="text"
+                formControlName="id">
+
+            </div>
+
+
+            <!-- Name -->
+            <div class="field full-width">
+
+              <label>Name</label>
+
+              <input
+                type="text"
+                formControlName="name">
+
+            </div>
+
+
+            <!-- Address -->
+            <div class="field full-width">
+
+              <label>Address</label>
+
+              <input
+                type="text"
+                formControlName="address">
+
+            </div>
+
+
+            <!-- City / State -->
+            <div class="field">
+
+              <label>City / State</label>
+
+              <input
+                type="text"
+                formControlName="cityState">
+
+            </div>
+
+
+            <!-- Phone -->
+            <div class="field">
+
+              <label>Phone</label>
+
+              <input
+                type="text"
+                formControlName="phone">
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="field full-width">
+
+              <label>Email</label>
+
+              <input
+                type="text"
+                formControlName="email">
+
+            </div>
+
+
+            <!-- GSTIN -->
+            <div class="field">
+
+              <label>GSTIN</label>
+
+              <input
+                type="text"
+                formControlName="gstin">
+
+            </div>
+
+
+            <!-- Distance -->
+            <div class="field">
+
+              <label>Distance</label>
+
+              <input
+                type="text"
+                formControlName="distance">
+
+            </div>
+
+
+            <!-- Pickup Point -->
+            <div class="field full-width">
+
+              <label>Pickup Point</label>
+
+              <input
+                type="text"
+                formControlName="pickupPoint">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- 3. CONTAINER DETAILS -->
+  <!-- ====================================================== -->
+
+  <section formGroupName="container" class="section">
+
+    <h2>3. CONTAINER DETAILS</h2>
+
+
+    <div class="table-section-layout">
+
+
+      <!-- ================================================= -->
+      <!-- LEFT: CONTAINER INPUTS -->
+      <!-- ================================================= -->
+
+      <div class="input-panel">
+
+        <div class="field">
+
+          <label>Container Number</label>
+
+          <input
+            type="text"
+            formControlName="containerNumber">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Container Size</label>
+
+          <input
+            type="text"
+            formControlName="containerSize">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Container Type</label>
+
+          <input
+            type="text"
+            formControlName="containerType">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Seal Number</label>
+
+          <input
+            type="text"
+            formControlName="sealNumber">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Loaded Weight</label>
+
+          <input
+            type="text"
+            formControlName="loadedWeight">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Tare Weight</label>
+
+          <input
+            type="text"
+            formControlName="tareWeight">
+
+        </div>
+
+
+        <button
+          type="button"
+          class="add-button"
+          (click)="addContainer()">
+
+          Add Container
+
+        </button>
+
+      </div>
+
+
+      <!-- ================================================= -->
+      <!-- RIGHT: CONTAINER TABLE -->
+      <!-- ================================================= -->
+
+      <div class="data-table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Container Number</th>
+              <th>Size</th>
+              <th>Type</th>
+              <th>Seal Number</th>
+              <th>Loaded Weight</th>
+              <th>Tare Weight</th>
+              <th>Action</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr
+              *ngFor="let row of containerRows; let i = index">
+
+              <td>{{ row.containerNumber }}</td>
+
+              <td>{{ row.containerSize }}</td>
+
+              <td>{{ row.containerType }}</td>
+
+              <td>{{ row.sealNumber }}</td>
+
+              <td>{{ row.loadedWeight }}</td>
+
+              <td>{{ row.tareWeight }}</td>
+
+              <td>
+
+                <button
+                  type="button"
+                  class="delete-button"
+                  (click)="removeContainer(i)">
+
+                  Delete
+
+                </button>
+
+              </td>
+
+            </tr>
+
+
+            <!-- Empty table -->
+
+            <tr *ngIf="containerRows.length === 0">
+
+              <td
+                colspan="7"
+                class="empty-table">
+
+                No container data entered
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- 4. PAYMENT & REGISTRATION AMOUNT -->
+  <!-- ====================================================== -->
+
+  <section formGroupName="payment" class="section">
+
+    <h2>4. PAYMENT &amp; REGISTRATION AMOUNT</h2>
+
+
+    <div class="payment-layout">
+
+
+      <!-- ================================================= -->
+      <!-- LEFT SIDE -->
+      <!-- ================================================= -->
+
+      <div>
+
+
+        <!-- PAYMENT TYPE -->
+
+        <div class="field">
+
+          <label>Payment Type</label>
+
+          <select formControlName="paymentType">
+
+            <option value="">
+              Select Payment Type
+            </option>
+
+            <option value="P">
+              P | Paid
+            </option>
+
+            <option value="T">
+              T | To Pay
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- =============================================== -->
+        <!-- PAID BY -->
+        <!-- =============================================== -->
+
+        <div class="radio-section">
+
+          <span class="group-label">
+            Paid By
+          </span>
+
+
+          <!-- Consignor -->
+
+          <label class="radio-label">
+
+            <input
+              type="radio"
+              formControlName="paidBy"
+              value="Consignor">
+
+            <span>Consignor</span>
+
+          </label>
+
+
+          <!-- Consignee -->
+
+          <label class="radio-label">
+
+            <input
+              type="radio"
+              formControlName="paidBy"
+              value="Consignee">
+
+            <span>Consignee</span>
+
+          </label>
+
+        </div>
+
+
+        <!-- =============================================== -->
+        <!-- PAYMENT / REGISTRATION OPTION -->
+        <!-- =============================================== -->
+
+        <div class="radio-section">
+
+          <span class="group-label">
+            Payment / Registration Option
+          </span>
+
+
+          <!-- PDA -->
+
+          <label class="radio-label">
+
+            <input
+              type="radio"
+              formControlName="paymentMode"
+              value="PDA">
+
+            <span>PDA</span>
+
+          </label>
+
+
+          <!-- CA -->
+
+          <label class="radio-label">
+
+            <input
+              type="radio"
+              formControlName="paymentMode"
+              value="CA">
+
+            <span>CA</span>
+
+          </label>
+
+
+          <!-- Money Receipt -->
+
+          <label class="radio-label">
+
+            <input
+              type="radio"
+              formControlName="paymentMode"
+              value="Money Receipt">
+
+            <span>Money Receipt</span>
+
+          </label>
+
+
+          <!-- Deferred -->
+
+          <label class="radio-label">
+
+            <input
+              type="radio"
+              formControlName="paymentMode"
+              value="Deferred">
+
+            <span>Deferred</span>
+
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================================================= -->
+      <!-- RIGHT SIDE: AMOUNTS -->
+      <!-- ================================================= -->
+
+      <div>
+
+
+        <!-- Total Amount -->
+
+        <div class="field">
+
+          <label>Total Amount</label>
+
+          <input
+            type="text"
+            formControlName="totalAmount">
+
+        </div>
+
+
+        <!-- Advance Amount -->
+
+        <div class="field">
+
+          <label>Advance Amount</label>
+
+          <input
+            type="text"
+            formControlName="advanceAmount">
+
+        </div>
+
+
+        <!-- Balance Amount -->
+
+        <div class="field">
+
+          <label>Balance Amount</label>
+
+          <input
+            type="text"
+            formControlName="balanceAmount">
+
+        </div>
+
+
+        <!-- Registration Amount -->
+
+        <div class="field">
+
+          <label>Registration Amount</label>
+
+          <input
+            type="text"
+            formControlName="registrationAmount">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- 5. ALLOTMENT DETAILS -->
+  <!-- ====================================================== -->
+
+  <section formGroupName="allotment" class="section">
+
+    <h2>5. ALLOTMENT DETAILS</h2>
+
+
+    <div class="table-section-layout">
+
+
+      <!-- ================================================= -->
+      <!-- LEFT: ALLOTMENT INPUTS -->
+      <!-- ================================================= -->
+
+      <div class="input-panel">
+
+
+        <!-- Allotted Wagon No. -->
+
+        <div class="field">
+
+          <label>Allotted Wagon No.</label>
+
+          <input
+            type="text"
+            formControlName="allottedWagonNo">
+
+        </div>
+
+
+        <!-- Allotted Coach No. -->
+
+        <div class="field">
+
+          <label>Allotted Coach No.</label>
+
+          <input
+            type="text"
+            formControlName="allottedCoachNo">
+
+        </div>
+
+
+        <!-- Allotted Slot No. -->
+
+        <div class="field">
+
+          <label>Allotted Slot No.</label>
+
+          <input
+            type="text"
+            formControlName="allottedSlotNo">
+
+        </div>
+
+
+        <!-- Allotted Berth No. -->
+
+        <div class="field">
+
+          <label>Allotted Berth No.</label>
+
+          <input
+            type="text"
+            formControlName="allottedBerthNo">
+
+        </div>
+
+
+        <!-- Remarks -->
+
+        <div class="field">
+
+          <label>Remarks</label>
+
+          <textarea
+            formControlName="remarks"
+            rows="3"></textarea>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="add-button"
+          (click)="addAllotment()">
+
+          Add Allotment
+
+        </button>
+
+      </div>
+
+
+      <!-- ================================================= -->
+      <!-- RIGHT: ALLOTMENT TABLE -->
+      <!-- ================================================= -->
+
+      <div class="data-table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Allotted Wagon No.</th>
+              <th>Allotted Coach No.</th>
+              <th>Allotted Slot No.</th>
+              <th>Allotted Berth No.</th>
+              <th>Remarks</th>
+              <th>Action</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr
+              *ngFor="let row of allotmentRows; let i = index">
+
+              <td>
+                {{ row.allottedWagonNo }}
+              </td>
+
+              <td>
+                {{ row.allottedCoachNo }}
+              </td>
+
+              <td>
+                {{ row.allottedSlotNo }}
+              </td>
+
+              <td>
+                {{ row.allottedBerthNo }}
+              </td>
+
+              <td>
+                {{ row.remarks }}
+              </td>
+
+              <td>
+
+                <button
+                  type="button"
+                  class="delete-button"
+                  (click)="removeAllotment(i)">
+
+                  Delete
+
+                </button>
+
+              </td>
+
+            </tr>
+
+
+            <!-- Empty table -->
+
+            <tr *ngIf="allotmentRows.length === 0">
+
+              <td
+                colspan="6"
+                class="empty-table">
+
+                No allotment data entered
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- FORM ACTIONS -->
+  <!-- ====================================================== -->
+
+  <div class="form-actions">
+
+    <button
+      type="button"
+      class="reset-button"
+      (click)="form.reset()">
+
+      Reset
+
+    </button>
+
+
+    <button
+      type="button"
+      class="submit-button"
+      (click)="submitForm()">
+
+      Submit
+
+    </button>
+
+  </div>
+
+</form>

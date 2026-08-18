@@ -1,0 +1,16 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Sidebar (fixed left) -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main content area (offset by sidebar width) -->
+  <div class="ml-64">
+    <!-- Navbar (fixed top) -->
+    <app-navbar></app-navbar>
+
+    <!-- Page content below navbar -->
+    <main class="pt-20 px-6 pb-8">
+      <router-outlet />
+    </main>
+  </div>
+</div>
+
