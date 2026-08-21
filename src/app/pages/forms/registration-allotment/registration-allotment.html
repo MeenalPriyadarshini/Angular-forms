@@ -1,364 +1,328 @@
-<form [formGroup]="form" class="registration-allotment-form">
+<form [formGroup]="form" class="registration-page">
 
-  <!-- ====================================================== -->
-  <!-- PAGE HEADER -->
-  <!-- ====================================================== -->
+  <!-- ========================================================= -->
+  <!-- TOP HEADER                                                 -->
+  <!-- ========================================================= -->
 
   <header class="page-header">
-    <h1>Registration / Allotment</h1>
+
+    <div class="page-title">
+      <span class="title-icon">▣</span>
+      <span>REGISTRATION / ALLOTMENT</span>
+    </div>
+
+    <div class="header-actions">
+
+      <button type="button">
+        <span class="action-icon">＋</span>
+        <span>New (F4)</span>
+      </button>
+
+      <button type="button">
+        <span class="action-icon">▣</span>
+        <span>Save (F2)</span>
+      </button>
+
+      <button type="button">
+        <span class="action-icon">↻</span>
+        <span>Retrieve (F5)</span>
+      </button>
+
+      <button type="button">
+        <span class="action-icon">▣</span>
+        <span>Print</span>
+      </button>
+
+      <button type="button">
+        <span class="action-icon">?</span>
+        <span>Help (F6)</span>
+      </button>
+
+      <button
+        type="button"
+        (click)="form.reset()">
+
+        <span class="action-icon">×</span>
+        <span>Exit (F9)</span>
+
+      </button>
+
+    </div>
+
   </header>
 
 
-  <!-- ====================================================== -->
-  <!-- FORM-SPECIFIC NAVIGATION -->
-  <!-- ====================================================== -->
+
+  <!-- ========================================================= -->
+  <!-- FORM NAVIGATION                                            -->
+  <!-- ========================================================= -->
 
   <app-form-nav></app-form-nav>
 
 
-  <!-- ====================================================== -->
-  <!-- 1. CONSIGNMENT DETAILS -->
-  <!-- ====================================================== -->
 
-  <section formGroupName="consignment" class="section">
+  <!-- ========================================================= -->
+  <!-- MAIN FORM CONTENT                                          -->
+  <!-- ========================================================= -->
 
-    <h2>1. CONSIGNMENT DETAILS</h2>
+  <main class="form-content">
 
-    <div class="form-grid two-column">
 
-      <!-- Station From -->
-      <div class="field">
-        <label>Station From</label>
-        <input
-          type="text"
-          formControlName="stationFrom">
+    <!-- ======================================================= -->
+    <!-- 1. CONSIGNMENT DETAILS                                  -->
+    <!-- ======================================================= -->
+
+    <section
+      formGroupName="consignment"
+      class="form-section">
+
+      <div class="section-title">
+        <span class="section-number">1.</span>
+        HEADER INFORMATION
       </div>
 
-      <!-- Consignment ID -->
-      <div class="field">
-        <label>Consignment ID</label>
-        <input
-          type="text"
-          formControlName="consignmentId">
+
+      <div class="compact-grid">
+
+        <div class="field">
+          <label>Station From</label>
+          <input
+            type="text"
+            formControlName="stationFrom">
+        </div>
+
+        <div class="field">
+          <label>Consignment ID</label>
+          <input
+            type="text"
+            formControlName="consignmentId">
+        </div>
+
+        <div class="field">
+          <label>Date</label>
+          <input
+            type="date"
+            formControlName="date">
+        </div>
+
+        <div class="field">
+          <label>Service Mode</label>
+
+          <select formControlName="serviceMode">
+            <option value="">Select</option>
+            <option value="CC">CC</option>
+            <option value="CD">CD</option>
+            <option value="CT">CT</option>
+            <option value="CW">CW</option>
+            <option value="DC">DC</option>
+            <option value="DD">DD</option>
+            <option value="DT">DT</option>
+            <option value="DW">DW</option>
+            <option value="TC">TC</option>
+            <option value="TD">TD</option>
+            <option value="TT">TT</option>
+            <option value="TW">TW</option>
+            <option value="WC">WC</option>
+            <option value="WD">WD</option>
+            <option value="WT">WT</option>
+            <option value="WW">WW</option>
+          </select>
+
+        </div>
+
+        <div class="field">
+          <label>Request Date</label>
+          <input
+            type="date"
+            formControlName="requestDate">
+        </div>
+
+        <div class="field">
+          <label>Delivery Date</label>
+          <input
+            type="date"
+            formControlName="deliveryDate">
+        </div>
+
+        <div class="checkbox-field">
+
+          <label>
+            <input
+              type="checkbox"
+              formControlName="wCnsee">
+
+            <span>W CNSEE</span>
+          </label>
+
+        </div>
+
       </div>
 
-      <!-- Date -->
-      <div class="field">
-        <label>Date</label>
-        <input
-          type="date"
-          formControlName="date">
+    </section>
+
+
+
+    <!-- ======================================================= -->
+    <!-- 2. REGISTRATION DETAILS                                 -->
+    <!-- ======================================================= -->
+
+    <section
+      formGroupName="registration"
+      class="form-section">
+
+      <div class="section-title">
+        <span class="section-number">2.</span>
+        REGISTRATION DETAILS
       </div>
 
-      <!-- Service Mode -->
-      <div class="field">
-        <label>Service Mode</label>
 
-        <select formControlName="serviceMode">
+      <!-- Registration information -->
 
-          <option value="">Select Service Mode</option>
+      <div class="registration-row">
 
-          <option value="CC">CC</option>
-          <option value="CD">CD</option>
-          <option value="CT">CT</option>
-          <option value="CW">CW</option>
-
-          <option value="DC">DC</option>
-          <option value="DD">DD</option>
-          <option value="DT">DT</option>
-          <option value="DW">DW</option>
-
-          <option value="TC">TC</option>
-          <option value="TD">TD</option>
-          <option value="TT">TT</option>
-          <option value="TW">TW</option>
-
-          <option value="WC">WC</option>
-          <option value="WD">WD</option>
-          <option value="WT">WT</option>
-          <option value="WW">WW</option>
-
-        </select>
-      </div>
-
-      <!-- Request Date -->
-      <div class="field">
-        <label>Request Date</label>
-        <input
-          type="date"
-          formControlName="requestDate">
-      </div>
-
-      <!-- Delivery Date -->
-      <div class="field">
-        <label>Delivery Date</label>
-        <input
-          type="date"
-          formControlName="deliveryDate">
-      </div>
-
-    </div>
-
-
-    <!-- W CNSEE -->
-
-    <div class="checkbox-row">
-
-      <label class="checkbox-label">
-
-        <input
-          type="checkbox"
-          formControlName="wCnsee">
-
-        <span>W CNSEE</span>
-
-      </label>
-
-    </div>
-
-  </section>
-
-
-  <!-- ====================================================== -->
-  <!-- 2. REGISTRATION DETAILS -->
-  <!-- ====================================================== -->
-
-  <section formGroupName="registration" class="section">
-
-    <h2>2. REGISTRATION DETAILS</h2>
-
-
-    <!-- ==================================================== -->
-    <!-- REGISTRATION INFORMATION -->
-    <!-- ==================================================== -->
-
-    <div class="sub-section">
-
-      <h3>Registration Information</h3>
-
-      <div class="checkbox-row">
-
-        <!-- Rebooking -->
-        <label class="checkbox-label">
-
+        <label class="check-option">
           <input
             type="checkbox"
             formControlName="rebooking">
-
-          <span>Rebooking</span>
-
+          Rebooking
         </label>
 
-
-        <!-- Rake -->
-        <label class="checkbox-label">
-
+        <label class="check-option">
           <input
             type="checkbox"
             formControlName="rake">
-
-          <span>Rake</span>
-
+          Rake
         </label>
 
-
-        <!-- Owned -->
-        <label class="checkbox-label">
-
+        <label class="check-option">
           <input
             type="checkbox"
             formControlName="owned">
-
-          <span>Owned</span>
-
+          Owned
         </label>
 
-      </div>
 
-
-      <div class="form-grid two-column">
-
-        <!-- Station To -->
-        <div class="field">
-
+        <div class="field compact-field">
           <label>Station To</label>
-
           <input
             type="text"
             formControlName="stationTo">
-
         </div>
 
 
-        <!-- Commodity Code -->
-        <div class="field">
-
+        <div class="field compact-field">
           <label>Commodity Code</label>
-
           <input
             type="text"
             formControlName="commodityCode">
-
         </div>
 
 
-        <!-- Commodity Description -->
-        <div class="field full-width">
-
+        <div class="field compact-field commodity-description">
           <label>Commodity Description</label>
-
           <input
             type="text"
             formControlName="commodityDescription">
-
         </div>
 
       </div>
 
-    </div>
 
 
-    <!-- ==================================================== -->
-    <!-- CONSIGNOR / CONSIGNEE -->
-    <!-- ==================================================== -->
-
-    <div class="sub-section">
-
-      <h3>Consignor / Consignee</h3>
-
+      <!-- ===================================================== -->
+      <!-- CONSIGNOR / CONSIGNEE                                 -->
+      <!-- ===================================================== -->
 
       <div class="party-grid">
 
 
-        <!-- ================================================= -->
         <!-- CONSIGNOR -->
-        <!-- ================================================= -->
 
         <div
           formGroupName="consignor"
           class="party-card">
 
-          <h4>Consignor</h4>
+          <div class="party-title">
+            <span>♙</span>
+            CONSIGNOR DETAILS
+          </div>
 
-          <div class="form-grid two-column">
 
-            <!-- Code -->
+          <div class="party-fields">
+
             <div class="field">
-
-              <label>Code</label>
-
+              <label>Consignor Code</label>
               <input
                 type="text"
                 formControlName="code">
-
             </div>
 
-
-            <!-- ID -->
             <div class="field">
-
-              <label>ID</label>
-
+              <label>Consignor ID</label>
               <input
                 type="text"
                 formControlName="id">
-
             </div>
 
-
-            <!-- Name -->
-            <div class="field full-width">
-
+            <div class="field">
               <label>Name</label>
-
               <input
                 type="text"
                 formControlName="name">
-
             </div>
 
-
-            <!-- Address -->
-            <div class="field full-width">
-
+            <div class="field">
               <label>Address</label>
-
               <input
                 type="text"
                 formControlName="address">
-
             </div>
 
-
-            <!-- City / State -->
             <div class="field">
-
               <label>City / State</label>
-
               <input
                 type="text"
                 formControlName="cityState">
-
             </div>
 
-
-            <!-- Phone -->
             <div class="field">
-
-              <label>Phone</label>
-
+              <label>Phone No.</label>
               <input
                 type="text"
                 formControlName="phone">
-
             </div>
 
-
-            <!-- Email -->
-            <div class="field full-width">
-
-              <label>Email</label>
-
+            <div class="field">
+              <label>E-Mail</label>
               <input
                 type="text"
                 formControlName="email">
-
             </div>
 
-
-            <!-- GSTIN -->
             <div class="field">
-
-              <label>GSTIN</label>
-
+              <label>Consignor GSTIN</label>
               <input
                 type="text"
                 formControlName="gstin">
-
             </div>
 
+          </div>
 
-            <!-- Distance -->
+
+          <div class="party-bottom">
+
             <div class="field">
-
-              <label>Distance</label>
-
+              <label>Dist. (Kms)</label>
               <input
                 type="text"
                 formControlName="distance">
-
             </div>
 
-
-            <!-- Pickup Point -->
-            <div class="field full-width">
-
+            <div class="field pickup-field">
               <label>Pickup Point</label>
-
               <input
                 type="text"
                 formControlName="pickupPoint">
-
             </div>
 
           </div>
@@ -366,692 +330,467 @@
         </div>
 
 
-        <!-- ================================================= -->
+
         <!-- CONSIGNEE -->
-        <!-- ================================================= -->
 
         <div
           formGroupName="consignee"
           class="party-card">
 
-          <h4>Consignee</h4>
+          <div class="party-title">
+            <span>♙</span>
+            CONSIGNEE DETAILS
+          </div>
 
-          <div class="form-grid two-column">
 
-            <!-- Code -->
+          <div class="party-fields">
+
             <div class="field">
-
-              <label>Code</label>
-
+              <label>Consignee Code</label>
               <input
                 type="text"
                 formControlName="code">
-
             </div>
 
-
-            <!-- ID -->
             <div class="field">
-
-              <label>ID</label>
-
+              <label>Consignee ID</label>
               <input
                 type="text"
                 formControlName="id">
-
             </div>
 
-
-            <!-- Name -->
-            <div class="field full-width">
-
+            <div class="field">
               <label>Name</label>
-
               <input
                 type="text"
                 formControlName="name">
-
             </div>
 
-
-            <!-- Address -->
-            <div class="field full-width">
-
+            <div class="field">
               <label>Address</label>
-
               <input
                 type="text"
                 formControlName="address">
-
             </div>
 
-
-            <!-- City / State -->
             <div class="field">
-
               <label>City / State</label>
-
               <input
                 type="text"
                 formControlName="cityState">
-
             </div>
 
-
-            <!-- Phone -->
             <div class="field">
-
-              <label>Phone</label>
-
+              <label>Phone No.</label>
               <input
                 type="text"
                 formControlName="phone">
-
             </div>
 
-
-            <!-- Email -->
-            <div class="field full-width">
-
-              <label>Email</label>
-
+            <div class="field">
+              <label>E-Mail</label>
               <input
                 type="text"
                 formControlName="email">
-
             </div>
 
-
-            <!-- GSTIN -->
             <div class="field">
-
-              <label>GSTIN</label>
-
+              <label>Consignee GSTIN</label>
               <input
                 type="text"
                 formControlName="gstin">
-
             </div>
 
+          </div>
 
-            <!-- Distance -->
+
+          <div class="party-bottom">
+
             <div class="field">
-
-              <label>Distance</label>
-
+              <label>Dist. (Kms)</label>
               <input
                 type="text"
                 formControlName="distance">
-
             </div>
 
-
-            <!-- Pickup Point -->
-            <div class="field full-width">
-
-              <label>Pickup Point</label>
-
+            <div class="field pickup-field">
+              <label>Divr Point</label>
               <input
                 type="text"
                 formControlName="pickupPoint">
-
             </div>
 
           </div>
 
         </div>
 
+
+
+        <!-- CONTAINER SUMMARY -->
+
+        <div
+          class="party-card container-summary">
+
+          <div class="party-title">
+            <span>▣</span>
+            CONTAINER DETAILS
+          </div>
+
+
+          <table class="mini-table">
+
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Size</th>
+                <th>No.</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr *ngFor="let row of containerRows">
+
+                <td>{{ row.containerType }}</td>
+                <td>{{ row.containerSize }}</td>
+                <td>{{ row.containerNumber }}</td>
+
+              </tr>
+
+              <tr *ngIf="containerRows.length === 0">
+
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+
+              <tr *ngIf="containerRows.length === 0">
+
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+          <button
+            type="button"
+            class="small-add-button"
+            (click)="addContainer()">
+
+            + Add Container
+
+          </button>
+
+        </div>
+
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- ====================================================== -->
-  <!-- 3. CONTAINER DETAILS -->
-  <!-- ====================================================== -->
 
-  <section formGroupName="container" class="section">
+    <!-- ======================================================= -->
+    <!-- CONTAINER INPUT                                         -->
+    <!-- ======================================================= -->
 
-    <h2>3. CONTAINER DETAILS</h2>
+    <section
+      formGroupName="container"
+      class="compact-input-section">
 
-
-    <div class="table-section-layout">
-
-
-      <!-- ================================================= -->
-      <!-- LEFT: CONTAINER INPUTS -->
-      <!-- ================================================= -->
-
-      <div class="input-panel">
+      <div class="inline-inputs">
 
         <div class="field">
-
-          <label>Container Number</label>
-
+          <label>Container No.</label>
           <input
             type="text"
             formControlName="containerNumber">
-
         </div>
 
-
         <div class="field">
-
-          <label>Container Size</label>
-
+          <label>Size</label>
           <input
             type="text"
             formControlName="containerSize">
-
         </div>
 
-
         <div class="field">
-
-          <label>Container Type</label>
-
+          <label>Type</label>
           <input
             type="text"
             formControlName="containerType">
-
         </div>
 
-
         <div class="field">
-
-          <label>Seal Number</label>
-
+          <label>Seal No.</label>
           <input
             type="text"
             formControlName="sealNumber">
-
         </div>
 
-
         <div class="field">
-
-          <label>Loaded Weight</label>
-
+          <label>Loaded Wt.</label>
           <input
             type="text"
             formControlName="loadedWeight">
-
         </div>
 
-
         <div class="field">
-
-          <label>Tare Weight</label>
-
+          <label>Tare Wt.</label>
           <input
             type="text"
             formControlName="tareWeight">
-
         </div>
-
 
         <button
           type="button"
-          class="add-button"
+          class="yellow-button"
           (click)="addContainer()">
 
-          Add Container
+          Add
 
         </button>
 
       </div>
 
-
-      <!-- ================================================= -->
-      <!-- RIGHT: CONTAINER TABLE -->
-      <!-- ================================================= -->
-
-      <div class="data-table-wrapper">
-
-        <table>
-
-          <thead>
-
-            <tr>
-
-              <th>Container Number</th>
-              <th>Size</th>
-              <th>Type</th>
-              <th>Seal Number</th>
-              <th>Loaded Weight</th>
-              <th>Tare Weight</th>
-              <th>Action</th>
-
-            </tr>
-
-          </thead>
+    </section>
 
 
-          <tbody>
 
-            <tr
-              *ngFor="let row of containerRows; let i = index">
+    <!-- ======================================================= -->
+    <!-- 4. PAYMENT                                              -->
+    <!-- ======================================================= -->
 
-              <td>{{ row.containerNumber }}</td>
+    <section
+      formGroupName="payment"
+      class="form-section payment-section">
 
-              <td>{{ row.containerSize }}</td>
-
-              <td>{{ row.containerType }}</td>
-
-              <td>{{ row.sealNumber }}</td>
-
-              <td>{{ row.loadedWeight }}</td>
-
-              <td>{{ row.tareWeight }}</td>
-
-              <td>
-
-                <button
-                  type="button"
-                  class="delete-button"
-                  (click)="removeContainer(i)">
-
-                  Delete
-
-                </button>
-
-              </td>
-
-            </tr>
-
-
-            <!-- Empty table -->
-
-            <tr *ngIf="containerRows.length === 0">
-
-              <td
-                colspan="7"
-                class="empty-table">
-
-                No container data entered
-
-              </td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
+      <div class="section-title">
+        <span class="section-number">4.</span>
+        PAYMENT & REGISTRATION AMOUNT
       </div>
 
-    </div>
 
-  </section>
-
-
-  <!-- ====================================================== -->
-  <!-- 4. PAYMENT & REGISTRATION AMOUNT -->
-  <!-- ====================================================== -->
-
-  <section formGroupName="payment" class="section">
-
-    <h2>4. PAYMENT &amp; REGISTRATION AMOUNT</h2>
+      <div class="payment-grid">
 
 
-    <div class="payment-layout">
-
-
-      <!-- ================================================= -->
-      <!-- LEFT SIDE -->
-      <!-- ================================================= -->
-
-      <div>
-
-
-        <!-- PAYMENT TYPE -->
+        <!-- Payment type -->
 
         <div class="field">
-
           <label>Payment Type</label>
 
           <select formControlName="paymentType">
-
-            <option value="">
-              Select Payment Type
-            </option>
-
-            <option value="P">
-              P | Paid
-            </option>
-
-            <option value="T">
-              T | To Pay
-            </option>
-
+            <option value="">Select</option>
+            <option value="P">P | Paid</option>
+            <option value="T">T | To Pay</option>
           </select>
-
         </div>
 
 
-        <!-- =============================================== -->
-        <!-- PAID BY -->
-        <!-- =============================================== -->
+        <!-- Paid by -->
 
-        <div class="radio-section">
+        <div class="radio-group">
 
           <span class="group-label">
             Paid By
           </span>
 
-
-          <!-- Consignor -->
-
-          <label class="radio-label">
-
+          <label>
             <input
               type="radio"
               formControlName="paidBy"
               value="Consignor">
-
-            <span>Consignor</span>
-
+            Consignor
           </label>
 
-
-          <!-- Consignee -->
-
-          <label class="radio-label">
-
+          <label>
             <input
               type="radio"
               formControlName="paidBy"
               value="Consignee">
-
-            <span>Consignee</span>
-
+            Consignee
           </label>
 
         </div>
 
 
-        <!-- =============================================== -->
-        <!-- PAYMENT / REGISTRATION OPTION -->
-        <!-- =============================================== -->
+        <!-- Payment mode -->
 
-        <div class="radio-section">
+        <div class="radio-group payment-mode">
 
           <span class="group-label">
-            Payment / Registration Option
+            Payment / Registration
           </span>
 
-
-          <!-- PDA -->
-
-          <label class="radio-label">
-
+          <label>
             <input
               type="radio"
               formControlName="paymentMode"
               value="PDA">
-
-            <span>PDA</span>
-
+            PDA
           </label>
 
-
-          <!-- CA -->
-
-          <label class="radio-label">
-
+          <label>
             <input
               type="radio"
               formControlName="paymentMode"
               value="CA">
-
-            <span>CA</span>
-
+            CA
           </label>
 
-
-          <!-- Money Receipt -->
-
-          <label class="radio-label">
-
+          <label>
             <input
               type="radio"
               formControlName="paymentMode"
               value="Money Receipt">
-
-            <span>Money Receipt</span>
-
+            Money Receipt
           </label>
 
-
-          <!-- Deferred -->
-
-          <label class="radio-label">
-
+          <label>
             <input
               type="radio"
               formControlName="paymentMode"
               value="Deferred">
-
-            <span>Deferred</span>
-
+            Deferred
           </label>
 
         </div>
 
-      </div>
 
+        <!-- Amounts -->
 
-      <!-- ================================================= -->
-      <!-- RIGHT SIDE: AMOUNTS -->
-      <!-- ================================================= -->
+        <div class="amount-fields">
 
-      <div>
+          <div class="field">
+            <label>Total</label>
+            <input
+              type="text"
+              formControlName="totalAmount">
+          </div>
 
+          <div class="field">
+            <label>Advance</label>
+            <input
+              type="text"
+              formControlName="advanceAmount">
+          </div>
 
-        <!-- Total Amount -->
+          <div class="field">
+            <label>Balance</label>
+            <input
+              type="text"
+              formControlName="balanceAmount">
+          </div>
 
-        <div class="field">
-
-          <label>Total Amount</label>
-
-          <input
-            type="text"
-            formControlName="totalAmount">
-
-        </div>
-
-
-        <!-- Advance Amount -->
-
-        <div class="field">
-
-          <label>Advance Amount</label>
-
-          <input
-            type="text"
-            formControlName="advanceAmount">
-
-        </div>
-
-
-        <!-- Balance Amount -->
-
-        <div class="field">
-
-          <label>Balance Amount</label>
-
-          <input
-            type="text"
-            formControlName="balanceAmount">
-
-        </div>
-
-
-        <!-- Registration Amount -->
-
-        <div class="field">
-
-          <label>Registration Amount</label>
-
-          <input
-            type="text"
-            formControlName="registrationAmount">
+          <div class="field">
+            <label>Registration</label>
+            <input
+              type="text"
+              formControlName="registrationAmount">
+          </div>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- ====================================================== -->
-  <!-- 5. ALLOTMENT DETAILS -->
-  <!-- ====================================================== -->
 
-  <section formGroupName="allotment" class="section">
+    <!-- ======================================================= -->
+    <!-- 5. ALLOTMENT                                            -->
+    <!-- ======================================================= -->
 
-    <h2>5. ALLOTMENT DETAILS</h2>
+    <section
+      formGroupName="allotment"
+      class="form-section allotment-section">
 
-
-    <div class="table-section-layout">
-
-
-      <!-- ================================================= -->
-      <!-- LEFT: ALLOTMENT INPUTS -->
-      <!-- ================================================= -->
-
-      <div class="input-panel">
+      <div class="section-title">
+        <span class="section-number">5.</span>
+        ALLOTMENT DETAILS
+      </div>
 
 
-        <!-- Allotted Wagon No. -->
+      <div class="allotment-inputs">
 
         <div class="field">
-
-          <label>Allotted Wagon No.</label>
-
+          <label>Wagon No.</label>
           <input
             type="text"
             formControlName="allottedWagonNo">
-
         </div>
 
-
-        <!-- Allotted Coach No. -->
-
         <div class="field">
-
-          <label>Allotted Coach No.</label>
-
+          <label>Coach No.</label>
           <input
             type="text"
             formControlName="allottedCoachNo">
-
         </div>
 
-
-        <!-- Allotted Slot No. -->
-
         <div class="field">
-
-          <label>Allotted Slot No.</label>
-
+          <label>Slot No.</label>
           <input
             type="text"
             formControlName="allottedSlotNo">
-
         </div>
 
-
-        <!-- Allotted Berth No. -->
-
         <div class="field">
-
-          <label>Allotted Berth No.</label>
-
+          <label>Berth No.</label>
           <input
             type="text"
             formControlName="allottedBerthNo">
-
         </div>
 
-
-        <!-- Remarks -->
-
-        <div class="field">
-
+        <div class="field remarks-field">
           <label>Remarks</label>
-
-          <textarea
-            formControlName="remarks"
-            rows="3"></textarea>
-
+          <input
+            type="text"
+            formControlName="remarks">
         </div>
-
 
         <button
           type="button"
-          class="add-button"
+          class="yellow-button"
           (click)="addAllotment()">
 
-          Add Allotment
+          Add
 
         </button>
 
       </div>
 
 
-      <!-- ================================================= -->
-      <!-- RIGHT: ALLOTMENT TABLE -->
-      <!-- ================================================= -->
+      <div class="allotment-table-wrapper">
 
-      <div class="data-table-wrapper">
-
-        <table>
+        <table class="data-table">
 
           <thead>
 
             <tr>
-
-              <th>Allotted Wagon No.</th>
-              <th>Allotted Coach No.</th>
-              <th>Allotted Slot No.</th>
-              <th>Allotted Berth No.</th>
+              <th>Wagon No.</th>
+              <th>Coach No.</th>
+              <th>Slot No.</th>
+              <th>Berth No.</th>
               <th>Remarks</th>
               <th>Action</th>
-
             </tr>
 
           </thead>
-
 
           <tbody>
 
             <tr
               *ngFor="let row of allotmentRows; let i = index">
 
-              <td>
-                {{ row.allottedWagonNo }}
-              </td>
-
-              <td>
-                {{ row.allottedCoachNo }}
-              </td>
-
-              <td>
-                {{ row.allottedSlotNo }}
-              </td>
-
-              <td>
-                {{ row.allottedBerthNo }}
-              </td>
-
-              <td>
-                {{ row.remarks }}
-              </td>
+              <td>{{ row.allottedWagonNo }}</td>
+              <td>{{ row.allottedCoachNo }}</td>
+              <td>{{ row.allottedSlotNo }}</td>
+              <td>{{ row.allottedBerthNo }}</td>
+              <td>{{ row.remarks }}</td>
 
               <td>
 
@@ -1069,16 +808,10 @@
             </tr>
 
 
-            <!-- Empty table -->
-
             <tr *ngIf="allotmentRows.length === 0">
 
-              <td
-                colspan="6"
-                class="empty-table">
-
+              <td colspan="6" class="empty-table">
                 No allotment data entered
-
               </td>
 
             </tr>
@@ -1089,14 +822,69 @@
 
       </div>
 
+    </section>
+
+
+
+  </main>
+
+
+
+  <!-- ========================================================= -->
+  <!-- BOTTOM ACTION BAR                                         -->
+  <!-- ========================================================= -->
+
+  <footer class="bottom-bar">
+
+    <div class="shortcut">
+
+      <span class="shortcut-key">F2</span>
+      Save
+
     </div>
 
-  </section>
+    <div class="shortcut">
+
+      <span class="shortcut-key">F3</span>
+      New
+
+    </div>
+
+    <div class="shortcut">
+
+      <span class="shortcut-key">F4</span>
+      Exit
+
+    </div>
+
+    <div class="shortcut">
+
+      <span class="shortcut-key">F5</span>
+      Retrieve
+
+    </div>
+
+    <div class="shortcut">
+
+      <span class="shortcut-key">F6</span>
+      Help
+
+    </div>
+
+    <div class="shortcut">
+
+      <span class="shortcut-key">Alt+L</span>
+      Screen Lock
+
+    </div>
+
+  </footer>
 
 
-  <!-- ====================================================== -->
-  <!-- FORM ACTIONS -->
-  <!-- ====================================================== -->
+
+  <!-- ========================================================= -->
+  <!-- FORM ACTIONS                                               -->
+  <!-- ========================================================= -->
 
   <div class="form-actions">
 
@@ -1108,7 +896,6 @@
       Reset
 
     </button>
-
 
     <button
       type="button"

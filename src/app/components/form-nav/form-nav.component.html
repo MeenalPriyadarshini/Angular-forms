@@ -4,28 +4,28 @@
     class="nav-item"
     *ngFor="let item of navItems; let i = index"
     (mouseenter)="onItemEnter(i)"
-    (mouseleave)="onItemLeave()"
-  >
+    (mouseleave)="onItemLeave()">
 
-    <!-- Main menu item -->
     <span class="nav-label">
       {{ item.label }}
     </span>
 
 
-    <!-- Dropdown -->
+    <!-- Floating submenu -->
     <div
-      *ngIf="hasChildren(item) && hoveredIndex === i"
       class="dropdown-menu"
+      *ngIf="hasSubmenu(item)"
+      [class.visible]="isHovered(i)"
       (mouseenter)="onItemEnter(i)"
-      (mouseleave)="onItemLeave()"
-    >
+      (mouseleave)="onItemLeave()">
 
       <div
         class="dropdown-item"
-        *ngFor="let child of item.children"
-      >
-        {{ child }}
+        *ngFor="let option of getSubmenu(item)"
+        (click)="onSubmenuClick(option)">
+
+        {{ option }}
+
       </div>
 
     </div>
